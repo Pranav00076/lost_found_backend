@@ -1,0 +1,1415 @@
+/* ========================================
+   RESET
+======================================== */
+/* ========================================
+   FILTER
+======================================== */
+
+.filterButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#showClaimed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  color: #aeb4bb;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#showClaimed:hover {
+  color: white;
+  background: #25272a;
+}
+
+#showClaimed.active {
+  color: #f1f1f1;
+  background: #292c30;
+  border-color: #383c40;
+}
+
+#showClaimed input {
+  accent-color: #9da3aa;
+}
+
+
+/* ========================================
+   ITEM CARD
+======================================== */
+
+.itemCard {
+  padding: 40px 30px;
+}
+
+
+/* Individual card */
+
+.itemCard > div {
+  position: relative;
+
+  width: 100%;
+  min-height: 220px;
+
+  margin-bottom: 22px;
+  padding: 27px 28px;
+
+  background: #202225;
+
+  border: 1px solid #41454a;
+  border-radius: 8px;
+
+  transition: 0.2s ease;
+}
+
+.itemCard > div:hover {
+  background: #232629;
+  border-color: #62676d;
+}
+
+
+/* ========================================
+   TYPE BADGES
+======================================== */
+
+#itemType {
+  display: inline-block;
+
+  margin: 0 10px 8px 0;
+  padding: 5px 9px;
+
+  border-radius: 4px;
+
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+.lostBadge {
+  color: #e7a5a5;
+  background: #3a2527;
+
+  border: 1px solid #654044;
+}
+
+.foundBadge {
+  color: #9fd0ad;
+  background: #25362b;
+
+  border: 1px solid #405b48;
+}
+
+
+/* ========================================
+   ITEM NAME
+======================================== */
+
+#itemName {
+  display: inline;
+
+  margin: 0;
+
+  color: #f1f3f5;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   PLACE / DATE
+======================================== */
+
+#itemPlace {
+  display: inline-block;
+
+  margin: 20px 0 0;
+
+  color: #c2c7cc;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#itemPlace::after {
+  content: " · ";
+
+  color: #555b61;
+
+  margin: 0 6px;
+}
+
+#itemDate {
+  display: inline-block;
+
+  margin: 20px 0 0;
+
+  color: #777e86;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+#itemContact {
+  margin: 13px 0 0;
+
+  color: #969da5;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: normal;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   CLAIMED CARD
+======================================== */
+
+.claimedCard {
+  opacity: 0.55;
+}
+
+.claimedCard:hover {
+  opacity: 0.7;
+}
+
+#itemStatus {
+  position: absolute;
+
+  top: 27px;
+  right: 28px;
+
+  margin: 0;
+  padding: 6px 10px;
+
+  color: #b9c0c6;
+  background: #292d31;
+
+  border: 1px solid #4a5056;
+  border-radius: 5px;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+
+/* ========================================
+   CARD BUTTONS
+======================================== */
+
+#buttonClaim,
+#buttonEdit,
+#buttonDelete {
+  position: absolute;
+  bottom: 22px;
+
+  padding: 7px 11px;
+
+  color: #aeb4bb;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#buttonDelete {
+  right: 18px;
+}
+
+#buttonEdit {
+  right: 90px;
+}
+
+#buttonClaim {
+  right: 150px;
+}
+
+#buttonClaim:hover,
+#buttonEdit:hover,
+#buttonDelete:hover {
+  color: white;
+  background: #2b2f33;
+  border-color: #50565c;
+}
+
+
+/* ========================================
+   EMPTY / LOADING
+======================================== */
+
+.emptyMessage,
+.loadingMessage {
+  padding: 55px 20px;
+
+  color: #777e86;
+
+  text-align: center;
+
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+}
+
+
+/* ========================================
+   MODAL
+======================================== */
+
+.modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+}
+
+
+/* ========================================
+   FORM MODAL
+======================================== */
+
+.formModal {
+  width: 100%;
+  max-width: 560px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #202225;
+
+  border: 1px solid #4a4f55;
+  border-radius: 9px;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Header */
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #3d4247;
+}
+
+.formHeader h2 {
+  margin: 0;
+
+  color: #f0f1f2;
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+
+  color: #aeb4bb;
+  background: transparent;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: white;
+  background: #2b2f33;
+}
+
+
+/* Form */
+
+.formModal form {
+  padding: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #c3c8cd;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+}
+
+.formGroup > input[type="text"],
+.formGroup > input[type="date"] {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 12px;
+
+  color: #e8eaec;
+  background: #181a1c;
+
+  border: 1px solid #44494f;
+  border-radius: 5px;
+
+  outline: none;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+
+  transition: border-color 0.2s ease;
+}
+
+.formGroup > input:focus {
+  border-color: #858b92;
+}
+
+
+/* Radio */
+
+.radioGroup {
+  display: flex;
+  gap: 25px;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #bfc4c9;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.radioGroup input {
+  accent-color: #aaa;
+}
+
+
+/* ========================================
+   SERVER WARNING
+======================================== */
+
+.formWarning {
+  margin: 5px 0 20px;
+
+  padding: 11px 13px;
+
+  color: #e3b3b3;
+  background: #332426;
+
+  border: 1px solid #5d3b3e;
+  border-radius: 5px;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   FORM ACTIONS
+======================================== */
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding-top: 8px;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 9px 16px;
+
+  border-radius: 5px;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.cancelButton {
+  color: #aeb4bb;
+  background: transparent;
+
+  border: 1px solid #454a50;
+}
+
+.cancelButton:hover {
+  color: white;
+  background: #292d31;
+}
+
+.submitButton {
+  color: #f0f1f2;
+  background: #30343a;
+
+  border: 1px solid #555b62;
+}
+
+.submitButton:hover {
+  background: #3a3f45;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 750px) {
+
+  #root {
+    padding: 20px 12px;
+  }
+
+  .filter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .itemCard {
+    padding: 30px 20px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 550px) {
+
+  #root {
+    padding: 10px;
+  }
+
+  nav {
+    padding: 0 16px;
+  }
+
+  #title {
+    font-size: 18px;
+  }
+
+  #reportItem {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+
+  .filter {
+    padding: 20px 16px;
+  }
+
+  .filterButtons {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+
+  #filterPlace {
+    width: 100%;
+  }
+
+  #filterPlace input {
+    flex: 1;
+    min-width: 0;
+  }
+
+
+  .itemCard {
+    padding: 22px 12px;
+  }
+
+
+  .itemCard > div {
+    min-height: 255px;
+
+    padding: 22px 18px 70px;
+  }
+
+
+  #itemType {
+    display: block;
+
+    width: fit-content;
+
+    margin-bottom: 9px;
+  }
+
+
+  #itemName {
+    display: block;
+
+    font-size: 18px;
+
+    line-height: 1.45;
+  }
+
+
+  #itemStatus {
+    position: static;
+
+    display: inline-block;
+
+    margin-top: 12px;
+  }
+
+
+  #itemPlace {
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  #itemPlace::after {
+    content: "";
+  }
+
+  #itemDate {
+    display: block;
+
+    margin-top: 5px;
+  }
+
+
+  #buttonClaim {
+    left: 18px;
+    right: auto;
+  }
+
+  #buttonEdit {
+    right: 82px;
+  }
+
+  #buttonDelete {
+    right: 18px;
+  }
+
+
+  /* Modal */
+
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .formModal {
+    max-height: 95vh;
+  }
+
+  .formModal form {
+    padding: 20px;
+  }
+
+  .radioGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  #title {
+    font-size: 16px;
+  }
+
+  #reportItem {
+    font-size: 11px;
+  }
+
+  #showAll,
+  #showLost,
+  #showFound,
+  #showClaimed {
+    font-size: 12px;
+  }
+
+  .itemCard > div {
+    padding: 20px 15px 70px;
+  }
+
+  #itemName {
+    font-size: 16px;
+  }
+
+  #itemPlace,
+  #itemDate,
+  #itemContact {
+    font-size: 13px;
+  }
+
+  #buttonClaim,
+  #buttonEdit,
+  #buttonDelete {
+    font-size: 11px;
+  }
+
+  #buttonClaim {
+    left: 15px;
+  }
+
+  #buttonEdit {
+    right: 68px;
+  }
+
+  #buttonDelete {
+    right: 15px;
+  }
+
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: #18191b;
+  color: #e5e7eb;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* ========================================
+   MAIN APP
+======================================== */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 32px 20px;
+}
+
+#root > div {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  background: #1d1f21;
+
+  border: 1px solid #3a3d40;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+nav {
+  min-height: 76px;
+
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #3a3d40;
+}
+
+#title {
+  margin: 0;
+
+  color: #f3f4f6;
+
+  font-family: "Courier New", monospace;
+  font-size: 23px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#reportItem {
+  padding: 10px 16px;
+
+  color: #e5e7eb;
+  background: transparent;
+
+  border: 1px solid #555a60;
+  border-radius: 6px;
+
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#reportItem:hover {
+  background: #292c30;
+  border-color: #858a91;
+}
+
+
+/* ========================================
+   FILTER BAR
+======================================== */
+
+.filter {
+  min-height: 115px;
+
+  padding: 28px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: #1b1d1f;
+
+  border-bottom: 1px solid #3a3d40;
+}
+
+
+/* Filter buttons */
+
+.filter > div:first-child {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#showAll,
+#showLost,
+#showFound,
+#showClaimed {
+  padding: 8px 13px;
+
+  color: #aeb3b9;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#showAll:hover,
+#showLost:hover,
+#showFound:hover,
+#showClaimed:hover {
+  color: #ffffff;
+  background: #292c30;
+}
+
+#showAll.active,
+#showLost.active,
+#showFound.active,
+#showClaimed.active {
+  color: #f1f1f1;
+  background: #292c30;
+
+  border-color: #303338;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Active + hover */
+#showAll.active:hover,
+#showLost.active:hover,
+#showFound.active:hover,
+#showClaimed.active:hover {
+  background: #303338;
+}
+
+
+/* Place filter */
+
+#filterPlace {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #9da3aa;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+#filterPlace input {
+  width: 170px;
+  height: 34px;
+
+  padding: 0 10px;
+
+  color: #e5e7eb;
+  background: #171819;
+
+  border: 1px solid #45494e;
+  border-radius: 5px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+#filterPlace input::placeholder {
+  color: #666b71;
+}
+
+#filterPlace input:focus {
+  border-color: #8b9198;
+}
+
+
+/* ========================================
+   ITEM SECTION
+======================================== */
+
+.itemCard {
+  padding: 40px 32px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.itemCard > div {
+  position: relative;
+
+  width: 100%;
+  min-height: 230px;
+
+  margin: 0 0 24px;
+  padding: 28px 30px;
+
+  background: #202225;
+
+  border: 1px solid #3f4348;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: 
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.itemCard > div:hover {
+  background: #232629;
+  border-color: #62676d;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   TYPE + ITEM NAME
+======================================== */
+
+#itemType {
+  margin: 0 0 7px;
+
+  color: #9da3aa;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+#itemName {
+  margin: 0;
+
+  color: #f1f3f5;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   PLACE + DATE
+======================================== */
+
+#itemPlace {
+  display: inline-block;
+
+  margin: 22px 0 0;
+
+  color: #c1c5ca;
+
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#itemPlace::after {
+  content: "  ·  ";
+
+  color: #555b61;
+}
+
+#itemDate {
+  display: inline-block;
+
+  margin: 22px 0 0;
+
+  color: #777e86;
+
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+#itemContact {
+  margin: 14px 0 0;
+
+  color: #949ba3;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   CLAIMED BADGE
+======================================== */
+
+#itemStatus {
+  position: absolute;
+
+  top: 28px;
+  right: 30px;
+
+  margin: 0;
+  padding: 5px 10px;
+
+  color: #aeb5bc;
+  background: #292d31;
+
+  border: 1px solid #4b5056;
+  border-radius: 4px;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+#buttonClaim,
+#buttonEdit,
+#buttonDelete {
+  position: absolute;
+  bottom: 25px;
+
+  padding: 7px 11px;
+
+  background: transparent;
+  color: #aeb4ba;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+#buttonClaim {
+  right: 185px;
+}
+
+#buttonEdit {
+  right: 105px;
+}
+
+#buttonDelete {
+  right: 25px;
+}
+
+#buttonClaim:hover,
+#buttonEdit:hover,
+#buttonDelete:hover {
+  color: #ffffff;
+
+  background: #2b2f33;
+  border-color: #4d5359;
+}
+
+
+/* ========================================
+   MOBILE / TABLET
+======================================== */
+
+@media (max-width: 750px) {
+
+  #root {
+    padding: 20px 12px;
+  }
+
+  nav {
+    padding: 0 22px;
+  }
+
+  .filter {
+    padding: 24px 22px;
+
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #filterPlace {
+    width: 100%;
+  }
+
+  #filterPlace input {
+    flex: 1;
+    max-width: 250px;
+  }
+
+  .itemCard {
+    padding: 30px 20px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 550px) {
+
+  #root {
+    padding: 10px;
+  }
+
+  #root > div {
+    border-radius: 7px;
+  }
+
+
+  /* Navbar */
+
+  nav {
+    min-height: 65px;
+
+    padding: 0 16px;
+  }
+
+  #title {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+
+  #reportItem {
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+
+  /* Filters */
+
+  .filter {
+    padding: 20px 16px;
+  }
+
+  .filter > div:first-child {
+    gap: 5px;
+  }
+
+  #showAll,
+  #showLost,
+  #showFound,
+  #showClaimed {
+    padding: 7px 9px;
+
+    font-size: 12px;
+  }
+
+  #filterPlace {
+    font-size: 13px;
+  }
+
+  #filterPlace input {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  /* Cards */
+
+  .itemCard {
+    padding: 22px 12px;
+  }
+
+  .itemCard > div {
+    min-height: 245px;
+
+    padding: 22px 18px 75px;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* Item */
+
+  #itemType {
+    display: block;
+
+    margin: 0 0 7px;
+
+    font-size: 12px;
+  }
+
+  #itemName {
+    display: block;
+
+    max-width: 100%;
+
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+
+  /* Status */
+
+  #itemStatus {
+    position: static;
+
+    display: inline-block;
+
+    margin: 14px 0 0;
+
+    font-size: 11px;
+  }
+
+
+  /* Place/date */
+
+  #itemPlace,
+  #itemDate {
+    margin-top: 18px;
+
+    font-size: 14px;
+  }
+
+  #itemPlace {
+    display: block;
+  }
+
+  #itemPlace::after {
+    content: "";
+  }
+
+  #itemDate {
+    display: block;
+
+    margin-top: 5px;
+  }
+
+
+  /* Contact */
+
+  #itemContact {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* Buttons */
+
+  #buttonClaim,
+  #buttonEdit,
+  #buttonDelete {
+    bottom: 20px;
+
+    font-size: 12px;
+  }
+
+  #buttonDelete {
+    right: 14px;
+  }
+
+  #buttonEdit {
+    right: 78px;
+  }
+
+  #buttonClaim {
+    right: 138px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  #title {
+    font-size: 15px;
+  }
+
+  #reportItem {
+    font-size: 11px;
+  }
+
+  .itemCard > div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #itemName {
+    font-size: 16px;
+  }
+
+  #buttonClaim,
+  #buttonEdit,
+  #buttonDelete {
+    padding: 6px 7px;
+
+    font-size: 11px;
+  }
+
+  #buttonDelete {
+    right: 10px;
+  }
+
+  #buttonEdit {
+    right: 70px;
+  }
+
+  #buttonClaim {
+    right: 125px;
+  }
+}
