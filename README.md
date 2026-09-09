@@ -6,8 +6,8 @@ A full-stack Lost & Found web application built with React, Vite, Node.js, and E
 - Took AI and Youtube help for jsx and connection
 
 # Deployment
-FrontEnd on Vercel : https://lost-found-backend-xi.vercel.app/
-BackEnd on Render : https://lost-found-backend-xz82.onrender.com
+- FrontEnd on Vercel : https://lost-found-backend-xi.vercel.app/
+- BackEnd on Render : https://lost-found-backend-xz82.onrender.com
 
 ## Features
 
