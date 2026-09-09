@@ -3,7 +3,7 @@
 
 A full-stack Lost & Found web application built with React, Vite, Node.js, and Express.
 Backend by me
-Took Ai help for jsx and connection
+Took AI and Youtube help for jsx and connection
 
 ## Features
 
