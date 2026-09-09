@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import ItemForm from "./ItemForm";
+const API_URL = "https://lost-found-backend-xz82.onrender.com"
+
 
 /* APP*/
 
@@ -51,8 +53,8 @@ function App() {
       const query = params.toString();
 
       const url = query
-        ? `/api/items?${query}`
-        : "/api/items";
+        ? `${API_URL}/api/items?${query}`
+        : `${API_URL}/api/items`;
 
 
       const response = await fetch(url);
@@ -118,7 +120,7 @@ function App() {
     try {
 
       const response = await fetch(
-        `/api/items/${id}`,
+        `${API_URL}/api/items/${id}`,
         {
           method: "DELETE"
         }
@@ -154,7 +156,7 @@ function App() {
     try {
 
       const response = await fetch(
-        `/api/items/${id}/claim`,
+        `${API_URL}/api/items/${id}/claim`,
         {
           method: "PATCH"
         }
