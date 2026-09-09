@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("node:path");
 const cors = require("cors")
+const PORT = process.env.PORT || 8080;
 
 const itemFilePath = path.join(__dirname, "./database/items.json");
 
@@ -241,6 +242,7 @@ app.delete("/api/items/:id", (req, res) => {
   });
 });
 
-app.listen(8080, () => {
-  console.log("Server Started on 8080");
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server Started on ${PORT}`);
 });
