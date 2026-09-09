@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+const API_URL = "https://lost-found-backend-xz82.onrender.com"
+
 export default function ItemForm({ item, onClose, onSuccess }) {
 
   const [form, setForm] = useState({
@@ -36,8 +38,8 @@ export default function ItemForm({ item, onClose, onSuccess }) {
     try {
 
       const url = item
-        ? `/api/items/${item.id}`
-        : "/api/items";
+        ? `${API_URL}/api/items/${item.id}`
+        : `${API_URL}/api/items`;
 
       const method = item ? "PUT" : "POST";
 
