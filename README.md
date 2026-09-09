@@ -1,4 +1,4 @@
-````md
+
 # Lost & Found
 
 A full-stack Lost & Found web application built with React, Vite, Node.js, and Express.
